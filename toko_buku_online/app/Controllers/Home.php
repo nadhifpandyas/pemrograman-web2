@@ -10,7 +10,7 @@ class Home extends BaseController
     }
 
     public function cart() {
-        return view('chart');
+        return view('cart');
         
     }
     public function search() {

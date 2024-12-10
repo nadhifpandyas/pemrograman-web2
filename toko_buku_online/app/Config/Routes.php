@@ -7,6 +7,17 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->get('search', 'Home::search');
-$routes->get('/chart', 'Home::cart');
+$routes->get('/cart', 'Home::cart');
 $routes->get('checkout', 'Home::checkout');
-$routes->post('/submit', 'Home::submit');
+$routes->get('/submit', 'Home::submit');
+
+service('auth')->routes($routes);
+
+// Admin
+$routes->group('admin', ['filter' => ['group:admin']], function($routes){
+    $routes->get('dashboard', 'AdminController::dashboard');
+    $routes->get('/daftar-buku', 'AdminController::daftarBuku');
+    $routes->get('/transaksi', 'AdminController::transaksi');
+    $routes->get('/pelanggan', 'AdminController::pelanggan');
+
+});
