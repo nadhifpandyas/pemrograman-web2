@@ -38,9 +38,16 @@
     <div class="container">
         <div class="row">
             <div class="col-3">
-                sindebar
+                <h2 class="mb-5">Menu</h2>
+            <div class="list-group">
+                <a href="<?= base_url('admin/dashboard') ?>" class="list-group-item list-group-item-action <?= current_url() == base_url('index.php/admin/dashboard') ? 'active' : '' ?> " aria-current="true">
+                    Dashboard
+                </a>
+                <a href="<?= base_url('admin/daftar-buku') ?>" class="list-group-item list-group-item-action <?= current_url() == base_url ('index.php/admin/daftar-buku') ? 'active' : '' ?>">Daftar Buku</a>
+                
+                </div>
             </div>
-            <div class="">
+            <div class="col-9">
                 <?= $this->renderSection('main'); ?>
 
             </div>
